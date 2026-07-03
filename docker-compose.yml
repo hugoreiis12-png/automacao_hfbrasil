@@ -12,9 +12,9 @@ services:
       - PG_DBNAME=FABRICA
       - PG_USER=postgres
       - PG_SCHEMA=hfbrasil_preco
-      # Senha lida de um Docker secret (arquivo), nunca de env nem do git.
-      # O config.py resolve PG_PASSWORD_FILE -> le /run/secrets/pg_password.
-      - PG_PASSWORD_FILE=/run/secrets/pg_password
+      # Senha: definida como variavel de ambiente da STACK no Portainer
+      # (nao vai para o git). Local dev le do .env automaticamente.
+      - PG_PASSWORD=${PG_PASSWORD:?defina a variavel PG_PASSWORD na stack do Portainer}
       # ── Pipeline ──
       - BASE_DIR=/app/dados
       - PERIODICIDADE=Diario
@@ -26,20 +26,7 @@ services:
     volumes:
       # Persiste XLSX/CSV/logs entre reinicios e recriacoes do container.
       - hfbrasil_dados:/app/dados
-    secrets:
-      - pg_password
     restart: unless-stopped
 
 volumes:
   hfbrasil_dados:
-
-secrets:
-  pg_password:
-    # Caminho do arquivo do secret NO HOST (Docker standalone monta em
-    # /run/secrets/pg_password dentro do container). O arquivo NAO vai no git.
-    #
-    # - Dev local:  ./secrets/pg_password  (gitignored — crie o seu)
-    # - Portainer:  defina a variavel de ambiente da stack
-    #               PG_PASSWORD_FILE_SRC=/caminho/no/host/pg_password
-    #               (ex: /opt/hfbrasil-preco/secrets/pg_password, chmod 600)
-    file: ${PG_PASSWORD_FILE_SRC:-./secrets/pg_password}

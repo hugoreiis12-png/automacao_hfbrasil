@@ -205,30 +205,26 @@ docker compose up -d
 docker compose logs -f
 ```
 
-### Secret da senha do banco (Docker standalone)
+### Senha do banco (fora do git)
 
-A senha do PostgreSQL **nao** fica em variavel de ambiente nem no git: e lida
-de um Docker secret montado em `/run/secrets/pg_password`. O `config.py`
-resolve `PG_PASSWORD_FILE` (convencao `_FILE` das imagens oficiais) lendo esse
-arquivo. Tambem ha suporte a `PG_USER_FILE`, se quiser proteger o usuario.
+A senha do PostgreSQL **nao** fica no repositorio. Ela e fornecida como
+variavel de ambiente da stack, e o `docker-compose.yml` a repassa ao container
+via `PG_PASSWORD=${PG_PASSWORD}`.
 
-**No host do Docker** (fora do git), crie o arquivo do secret:
-
-```bash
-sudo mkdir -p /opt/hfbrasil-preco/secrets
-printf 'SUA_SENHA_REAL' | sudo tee /opt/hfbrasil-preco/secrets/pg_password >/dev/null
-sudo chmod 600 /opt/hfbrasil-preco/secrets/pg_password
-```
-
-**No Portainer** (Stack a partir do git), defina uma variavel de ambiente da
-stack apontando para esse arquivo:
+**No Portainer** (Stack a partir do git), em *Environment variables* adicione:
 
 ```
-PG_PASSWORD_FILE_SRC=/opt/hfbrasil-preco/secrets/pg_password
+PG_PASSWORD=sua_senha_real
 ```
 
-**Em dev local**, basta criar `secrets/pg_password` na raiz do projeto
-(gitignored) — o compose usa esse caminho por padrao.
+A senha fica armazenada na configuracao da stack no Portainer, nunca no git.
+
+**Em dev local**, o `docker compose` le `PG_PASSWORD` do arquivo `.env`
+(gitignored) automaticamente.
+
+> Nota: o `config.py` tambem aceita a convencao Docker `_FILE`
+> (`PG_PASSWORD_FILE` / `PG_USER_FILE` apontando para um arquivo montado), util
+> caso um dia migre para Docker Swarm e queira usar secrets nativos.
 
 ### Schema no banco de destino
 
