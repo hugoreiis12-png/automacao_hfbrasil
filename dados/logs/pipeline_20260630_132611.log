@@ -1,0 +1,20 @@
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Run ID: b7af8240-4c57-4f5b-a9af-2bd0f209ded3
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Dry-run: True | Headless: True
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ==================================================
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ==================================================
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Iniciando verificacoes pre-voo
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 |   Diretorio csv: dados\csv (OK)
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 |   Diretorio logs: dados\logs (OK)
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Todas as verificacoes pre-voo passaram
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ==================================================
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | ==================================================
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | [dry-run] Extracao simulado — nenhum download sera realizado
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | [dry-run] Simulacao concluida — nenhum download/carga executado
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-30 13:26:11] INFO     hfbrasil.b7af8240-4c57-4f5b-a9af-2bd0f209ded3 | Pipeline finalizada — etapas OK: 1, falhas: 0, duracao: 0.2s

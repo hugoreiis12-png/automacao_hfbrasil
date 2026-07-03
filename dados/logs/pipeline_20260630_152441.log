@@ -1,0 +1,45 @@
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Run ID: a485675a-06e9-4f7c-9d1f-48a299c35f68
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Produtos: ['ALFACE']
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Dry-run: False | Headless: True
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Iniciando verificacoes pre-voo
+[2026-06-30 15:24:41] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Site OK (HTTP 200)
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Diretorio csv: dados\csv (OK)
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Diretorio logs: dados\logs (OK)
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Todas as verificacoes pre-voo passaram
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-30 15:24:42] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:43] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Extraindo: ALFACE (radio value=12)
+[2026-06-30 15:24:51] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\ALFACE_2026.xlsx
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ETAPA 3/5 — Transformacao (XLS → CSV)
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Transformando: ALFACE_2026.xlsx
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Produto detectado: ALFACE
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Linhas brutas: 13 | Colunas: ['Produto', 'Região', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Linha-residuo removida (produto='Fonte: Hortifruti/Cepea')
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Colunas ausentes preenchidas com default: ['dia', 'mes']
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   CSV gerado: ALFACE_2026.csv (12 linhas)
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ETAPA 4/5 — Qualidade (gates)
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Validando: ALFACE_2026.csv
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Qualidade OK — 12 linhas, 0 erros
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Qualidade OK — todos os CSVs validados
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ETAPA 5/5 — Carga no banco
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | ==================================================
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Carregando: ALFACE_2026.csv (ano=2026, 6 produto(s) distinto(s))
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Registros removidos: 12
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 |   Registros inseridos: 12
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Carga concluida: 12 registros inseridos
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Pipeline concluida com sucesso — 12 registros
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-30 15:24:54] INFO     hfbrasil.a485675a-06e9-4f7c-9d1f-48a299c35f68 | Pipeline finalizada — etapas OK: 5, falhas: 0, duracao: 12.8s

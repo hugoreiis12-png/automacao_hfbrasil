@@ -1,0 +1,46 @@
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Run ID: 0bb8b6d8-472b-4676-ab7b-c6cfec5f1421
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Produtos: ['CEBOLA']
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Dry-run: False | Headless: True
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Iniciando verificacoes pre-voo
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Site OK (HTTP 200)
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Diretorio csv: dados\csv (OK)
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Diretorio logs: dados\logs (OK)
+[2026-06-30 18:01:07] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Todas as verificacoes pre-voo passaram
+[2026-06-30 18:01:08] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:08] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-30 18:01:08] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:09] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Extraindo: CEBOLA (radio value=2)
+[2026-06-30 18:01:17] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\CEBOLA_2026.xlsx
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ETAPA 3/5 — Transformacao (XLS → CSV)
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Transformando: CEBOLA_2026.xlsx
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Produto detectado: CEBOLA
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Linhas brutas: 49 | Colunas: ['Produto', 'Região', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Linha-residuo removida (produto='Fonte: Hortifruti/Cepea')
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Prefixo 'Cebola' aplicado a 48 linha(s) de produto
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Colunas ausentes preenchidas com default: ['dia', 'mes']
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   CSV gerado: CEBOLA_2026.csv (48 linhas)
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ETAPA 4/5 — Qualidade (gates)
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Validando: CEBOLA_2026.csv
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Qualidade OK — 48 linhas, 0 erros
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Qualidade OK — todos os CSVs validados
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ETAPA 5/5 — Carga no banco
+[2026-06-30 18:01:19] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | ==================================================
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Carregando: CEBOLA_2026.csv (ano=2026, 15 produto(s) distinto(s))
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Registros removidos: 84
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 |   Registros inseridos: 48
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Carga concluida: 48 registros inseridos
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Pipeline concluida com sucesso — 48 registros
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-30 18:01:20] INFO     hfbrasil.0bb8b6d8-472b-4676-ab7b-c6cfec5f1421 | Pipeline finalizada — etapas OK: 5, falhas: 0, duracao: 12.8s

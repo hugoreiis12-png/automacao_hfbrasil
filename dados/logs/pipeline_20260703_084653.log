@@ -1,0 +1,95 @@
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Run ID: ffb45dc4-64b5-4bea-ba11-83334d3ef728
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Ano: 2026 | Regiao: Todos | Periodicidade: Diario
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Dry-run: False | Headless: True
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Iniciando verificacoes pre-voo
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Site OK (HTTP 200)
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Diretorio csv: dados\csv (OK)
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Diretorio logs: dados\logs (OK)
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Todas as verificacoes pre-voo passaram
+[2026-07-03 08:46:53] WARNING  hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Falha ao registrar auditoria: Falha no INSERT de auditoria: ERRO:  não existe a relação "hfbrasil_preco.pipeline_auditoria"
+LINE 1: INSERT INTO "hfbrasil_preco"."pipeline_auditoria" (run_id, e...
+                    ^
+
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ETAPA 2/5 — Extracao (Selenium)
+[2026-07-03 08:46:53] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:46:58] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Extraindo: ALFACE (radio value=12)
+[2026-07-03 08:47:09] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\ALFACE_2026.xlsx
+[2026-07-03 08:47:09] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Extraindo: TOMATE (radio value=5)
+[2026-07-03 08:47:18] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\TOMATE_2026.xlsx
+[2026-07-03 08:47:18] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Extraindo: CEBOLA (radio value=2)
+[2026-07-03 08:47:26] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\CEBOLA_2026.xlsx
+[2026-07-03 08:47:31] WARNING  hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Falha ao registrar auditoria: Falha no INSERT de auditoria: ERRO:  não existe a relação "hfbrasil_preco.pipeline_auditoria"
+LINE 1: INSERT INTO "hfbrasil_preco"."pipeline_auditoria" (run_id, e...
+                    ^
+
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ETAPA 3/5 — Transformacao (XLS → CSV)
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Transformando: ALFACE_2026.xlsx
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Produto detectado: ALFACE
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linhas brutas: 303 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linha(s)-residuo removida: 1
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   XLSX limpo salvo: ALFACE_2026.xlsx
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV original: ALFACE_2026.csv (302 linhas)
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV DB: ALFACE_2026_db.csv (302 linhas)
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Transformando: TOMATE_2026.xlsx
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Produto detectado: TOMATE
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linhas brutas: 1991 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:47:31] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linha(s)-residuo removida: 1
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   XLSX limpo salvo: TOMATE_2026.xlsx
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV original: TOMATE_2026.csv (1990 linhas)
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV DB: TOMATE_2026_db.csv (1990 linhas)
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Transformando: CEBOLA_2026.xlsx
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Produto detectado: CEBOLA
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linhas brutas: 482 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Linha(s)-residuo removida: 1
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Prefixo 'Cebola' aplicado a 481 linha(s) de produto
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   XLSX limpo salvo: CEBOLA_2026.xlsx
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV original: CEBOLA_2026.csv (481 linhas)
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   CSV DB: CEBOLA_2026_db.csv (481 linhas)
+[2026-07-03 08:47:32] WARNING  hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Falha ao registrar auditoria: Falha no INSERT de auditoria: ERRO:  não existe a relação "hfbrasil_preco.pipeline_auditoria"
+LINE 1: INSERT INTO "hfbrasil_preco"."pipeline_auditoria" (run_id, e...
+                    ^
+
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ETAPA 4/5 — Qualidade (gates)
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Validando: ALFACE_2026_db.csv
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Qualidade OK — 302 linhas, 0 erros
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Validando: TOMATE_2026_db.csv
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Qualidade OK — 1990 linhas, 0 erros
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Validando: CEBOLA_2026_db.csv
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Qualidade OK — 481 linhas, 0 erros
+[2026-07-03 08:47:32] WARNING  hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Falha ao registrar auditoria: Falha no INSERT de auditoria: ERRO:  não existe a relação "hfbrasil_preco.pipeline_auditoria"
+LINE 1: INSERT INTO "hfbrasil_preco"."pipeline_auditoria" (run_id, e...
+                    ^
+
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Qualidade OK — todos os CSVs validados
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ETAPA 5/5 — Carga no banco
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | ==================================================
+[2026-07-03 08:47:32] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Carregando: ALFACE_2026_db.csv (ano=2026, 6 produto(s) distinto(s))
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros removidos: 290
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros inseridos: 302
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Carregando: TOMATE_2026_db.csv (ano=2026, 5 produto(s) distinto(s))
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros removidos: 1856
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros inseridos: 1990
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Carregando: CEBOLA_2026_db.csv (ano=2026, 15 produto(s) distinto(s))
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros removidos: 459
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 |   Registros inseridos: 481
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Carga concluida: 2773 registros inseridos
+[2026-07-03 08:47:33] WARNING  hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Falha ao registrar auditoria: Falha no INSERT de auditoria: ERRO:  não existe a relação "hfbrasil_preco.pipeline_auditoria"
+LINE 1: INSERT INTO "hfbrasil_preco"."pipeline_auditoria" (run_id, e...
+                    ^
+
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Pipeline concluida com sucesso — 2773 registros
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-07-03 08:47:33] INFO     hfbrasil.ffb45dc4-64b5-4bea-ba11-83334d3ef728 | Pipeline finalizada — etapas OK: 5, falhas: 0, duracao: 40.1s

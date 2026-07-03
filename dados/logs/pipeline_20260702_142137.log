@@ -1,0 +1,34 @@
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Run ID: d886f4c9-31da-4dd3-8109-47e483c82a3b
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Dry-run: False | Headless: True
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ==================================================
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ETAPA 1/5 — Verificacoes pre-voo
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ==================================================
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Iniciando verificacoes pre-voo
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b |   Site OK (HTTP 200)
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b |   Diretorio xlsx: dados\xlsx (OK)
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b |   Diretorio csv: dados\csv (OK)
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b |   Diretorio logs: dados\logs (OK)
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Todas as verificacoes pre-voo passaram
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ==================================================
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ETAPA 2/5 — Extracao (Selenium)
+[2026-07-02 14:21:37] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | ==================================================
+[2026-07-02 14:21:40] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Extraindo: ALFACE (radio value=12)
+[2026-07-02 14:21:47] ERROR    hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Etapa 'extract' falhou: [WinError 32] O arquivo já está sendo usado por outro processo: 'dados\\xlsx\\ALFACE_2026.xlsx'
+[2026-07-02 14:21:47] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | 
+==================================================
+  PIPELINE hfbrasil-preco
+==================================================
+  Run ID:     d886f4c9-31da-4dd3-8109-47e483c82a3b
+  Inicio:     2026-07-02 14:21:37
+  Duracao:    10.8s
+  Status:     FALHA
+
+  Etapas:
+    checks       → passed
+    extract      → failed
+==================================================
+[2026-07-02 14:21:47] INFO     hfbrasil.d886f4c9-31da-4dd3-8109-47e483c82a3b | Pipeline finalizada — etapas OK: 1, falhas: 1, duracao: 10.8s

@@ -1,0 +1,45 @@
+services:
+  hfbrasil-preco:
+    build: .
+    image: hfbrasil-preco:latest
+    container_name: hfbrasil-preco
+    environment:
+      # ── Fuso (o agendamento de segunda 07:00 segue este TZ) ──
+      - TZ=America/Sao_Paulo
+      # ── Banco (prefixo PG_) — SEM a senha aqui ──
+      - PG_HOST=192.168.0.250
+      - PG_PORT=5432
+      - PG_DBNAME=FABRICA
+      - PG_USER=postgres
+      - PG_SCHEMA=hfbrasil_preco
+      # Senha lida de um Docker secret (arquivo), nunca de env nem do git.
+      # O config.py resolve PG_PASSWORD_FILE -> le /run/secrets/pg_password.
+      - PG_PASSWORD_FILE=/run/secrets/pg_password
+      # ── Pipeline ──
+      - BASE_DIR=/app/dados
+      - PERIODICIDADE=Diario
+      - HEADLESS=true
+      - CANAL=console
+      # RUN_ON_START=true executa o pipeline uma vez ao subir o container
+      # (valide o deploy e depois volte para false).
+      - RUN_ON_START=false
+    volumes:
+      # Persiste XLSX/CSV/logs entre reinicios e recriacoes do container.
+      - hfbrasil_dados:/app/dados
+    secrets:
+      - pg_password
+    restart: unless-stopped
+
+volumes:
+  hfbrasil_dados:
+
+secrets:
+  pg_password:
+    # Caminho do arquivo do secret NO HOST (Docker standalone monta em
+    # /run/secrets/pg_password dentro do container). O arquivo NAO vai no git.
+    #
+    # - Dev local:  ./secrets/pg_password  (gitignored — crie o seu)
+    # - Portainer:  defina a variavel de ambiente da stack
+    #               PG_PASSWORD_FILE_SRC=/caminho/no/host/pg_password
+    #               (ex: /opt/hfbrasil-preco/secrets/pg_password, chmod 600)
+    file: ${PG_PASSWORD_FILE_SRC:-./secrets/pg_password}

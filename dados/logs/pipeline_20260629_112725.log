@@ -1,0 +1,20 @@
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Run ID: 1eb1390c-5f21-42a9-9d06-0ef41b863956
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Ano: 2026 | Regiao: Todos | Periodicidade: mensal
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Dry-run: True | Headless: True
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ==================================================
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ==================================================
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Iniciando verificacoes pre-voo
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 |   Diretorio csv: dados\csv (OK)
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 |   Diretorio logs: dados\logs (OK)
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Todas as verificacoes pre-voo passaram
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ==================================================
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | ==================================================
+[2026-06-29 11:27:25] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | [dry-run] Extracao simulado — nenhum download sera realizado
+[2026-06-29 11:27:26] WARNING  hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Nenhum XLS baixado — pipeline encerrada
+[2026-06-29 11:27:26] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-29 11:27:26] INFO     hfbrasil.1eb1390c-5f21-42a9-9d06-0ef41b863956 | Pipeline finalizada — etapas OK: 1, falhas: 0, duracao: 0.2s

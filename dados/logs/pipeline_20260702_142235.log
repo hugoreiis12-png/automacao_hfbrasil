@@ -1,0 +1,34 @@
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Run ID: 98624bc4-ce89-4f0b-898e-1a25b0578467
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Dry-run: False | Headless: True
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ==================================================
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ==================================================
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Iniciando verificacoes pre-voo
+[2026-07-02 14:22:35] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 |   Site OK (HTTP 200)
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 |   Diretorio csv: dados\csv (OK)
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 |   Diretorio logs: dados\logs (OK)
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Todas as verificacoes pre-voo passaram
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ==================================================
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ETAPA 2/5 — Extracao (Selenium)
+[2026-07-02 14:22:36] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | ==================================================
+[2026-07-02 14:22:38] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Extraindo: ALFACE (radio value=12)
+[2026-07-02 14:22:53] ERROR    hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Etapa 'extract' falhou: [WinError 32] O arquivo já está sendo usado por outro processo: 'dados\\xlsx\\ALFACE_2026.xlsx'
+[2026-07-02 14:22:53] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | 
+==================================================
+  PIPELINE hfbrasil-preco
+==================================================
+  Run ID:     98624bc4-ce89-4f0b-898e-1a25b0578467
+  Inicio:     2026-07-02 14:22:35
+  Duracao:    17.7s
+  Status:     FALHA
+
+  Etapas:
+    checks       → passed
+    extract      → failed
+==================================================
+[2026-07-02 14:22:53] INFO     hfbrasil.98624bc4-ce89-4f0b-898e-1a25b0578467 | Pipeline finalizada — etapas OK: 1, falhas: 1, duracao: 17.7s

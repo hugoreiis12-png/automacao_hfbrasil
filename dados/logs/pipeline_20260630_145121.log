@@ -1,0 +1,43 @@
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Run ID: dad423ca-74df-463d-bcb7-541a1609b2ed
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Produtos: ['ALFACE']
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Dry-run: False | Headless: True
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Iniciando verificacoes pre-voo
+[2026-06-30 14:51:21] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Site OK (HTTP 200)
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Diretorio csv: dados\csv (OK)
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Diretorio logs: dados\logs (OK)
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Todas as verificacoes pre-voo passaram
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-30 14:51:22] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:24] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Extraindo: ALFACE (radio value=12)
+[2026-06-30 14:51:33] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\ALFACE_2026.xlsx
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ETAPA 3/5 — Transformacao (XLS → CSV)
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Transformando: ALFACE_2026.xlsx
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Produto detectado: ALFACE
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Linhas brutas: 13 | Colunas: ['Produto', 'Região', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Colunas ausentes preenchidas com default: ['dia', 'mes']
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   CSV gerado: ALFACE_2026.csv (12 linhas)
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ETAPA 4/5 — Qualidade (gates)
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Validando: ALFACE_2026.csv
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Qualidade OK — 12 linhas, 0 erros
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Qualidade OK — todos os CSVs validados
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ETAPA 5/5 — Carga no banco
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | ==================================================
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Carregando: ALFACE_2026.csv (ano=2026)
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed |   Registros inseridos: 12
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Carga concluida: 12 registros inseridos
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Pipeline concluida com sucesso — 12 registros
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-30 14:51:36] INFO     hfbrasil.dad423ca-74df-463d-bcb7-541a1609b2ed | Pipeline finalizada — etapas OK: 5, falhas: 0, duracao: 14.8s

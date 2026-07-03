@@ -1,0 +1,75 @@
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Run ID: b8a413c4-b0db-4b21-9c65-a84b2004313e
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Produtos: ['ALFACE', 'TOMATE', 'CEBOLA']
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Ano: 2026 | Regiao: Todos | Periodicidade: Diario
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Dry-run: False | Headless: True
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ETAPA 1/5 — Verificacoes pre-voo
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Iniciando verificacoes pre-voo
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Site OK (HTTP 200)
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Diretorio xlsx: dados\xlsx (OK)
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Diretorio csv: dados\csv (OK)
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Diretorio logs: dados\logs (OK)
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Todas as verificacoes pre-voo passaram
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ETAPA 2/5 — Extracao (Selenium)
+[2026-07-03 08:30:18] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:31] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Extraindo: ALFACE (radio value=12)
+[2026-07-03 08:30:39] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\ALFACE_2026.xlsx
+[2026-07-03 08:30:39] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Extraindo: TOMATE (radio value=5)
+[2026-07-03 08:30:47] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\TOMATE_2026.xlsx
+[2026-07-03 08:30:47] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Extraindo: CEBOLA (radio value=2)
+[2026-07-03 08:30:54] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Download concluido: C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx\CEBOLA_2026.xlsx
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ETAPA 3/5 — Transformacao (XLS → CSV)
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Transformando: ALFACE_2026.xlsx
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Produto detectado: ALFACE
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linhas brutas: 303 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:30:57] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linha(s)-residuo removida: 1
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   XLSX limpo salvo: ALFACE_2026.xlsx
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV original: ALFACE_2026.csv (302 linhas)
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV DB: ALFACE_2026_db.csv (302 linhas)
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Transformando: TOMATE_2026.xlsx
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Produto detectado: TOMATE
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linhas brutas: 1991 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linha(s)-residuo removida: 1
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   XLSX limpo salvo: TOMATE_2026.xlsx
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV original: TOMATE_2026.csv (1990 linhas)
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV DB: TOMATE_2026_db.csv (1990 linhas)
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Transformando: CEBOLA_2026.xlsx
+[2026-07-03 08:30:58] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Produto detectado: CEBOLA
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linhas brutas: 482 | Colunas: ['Produto', 'Região', 'Dia', 'Mês', 'Ano', 'Moeda', 'Unidade', 'Preço']
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Linha(s)-residuo removida: 1
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Prefixo 'Cebola' aplicado a 481 linha(s) de produto
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   XLSX limpo salvo: CEBOLA_2026.xlsx
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV original: CEBOLA_2026.csv (481 linhas)
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   CSV DB: CEBOLA_2026_db.csv (481 linhas)
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ETAPA 4/5 — Qualidade (gates)
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Validando: ALFACE_2026_db.csv
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Qualidade OK — 302 linhas, 0 erros
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Validando: TOMATE_2026_db.csv
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Qualidade OK — 1990 linhas, 0 erros
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Validando: CEBOLA_2026_db.csv
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Qualidade OK — 481 linhas, 0 erros
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Qualidade OK — todos os CSVs validados
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ETAPA 5/5 — Carga no banco
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | ==================================================
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Carregando: ALFACE_2026_db.csv (ano=2026, 6 produto(s) distinto(s))
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros removidos: 55
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros inseridos: 302
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Carregando: TOMATE_2026_db.csv (ano=2026, 5 produto(s) distinto(s))
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros removidos: 309
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros inseridos: 1990
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Carregando: CEBOLA_2026_db.csv (ano=2026, 15 produto(s) distinto(s))
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros removidos: 84
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e |   Registros inseridos: 481
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Carga concluida: 2773 registros inseridos
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Pipeline concluida com sucesso — 2773 registros
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-07-03 08:30:59] INFO     hfbrasil.b8a413c4-b0db-4b21-9c65-a84b2004313e | Pipeline finalizada — etapas OK: 5, falhas: 0, duracao: 41.5s

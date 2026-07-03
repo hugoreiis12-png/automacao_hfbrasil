@@ -1,0 +1,20 @@
+# Ambiente virtual (10k+ arquivos — nunca deve ir para o contexto de build)
+.venv/
+# Dados gerados localmente (o container usa seu proprio volume)
+dados/
+# Caches e artefatos
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+# Git e config local
+.git/
+.gitignore
+.env
+# Secrets nunca entram no contexto de build (montados em runtime)
+secrets/
+# Testes e docs nao entram na imagem de runtime
+tests/
+*.md

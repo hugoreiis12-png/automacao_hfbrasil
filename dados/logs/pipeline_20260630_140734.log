@@ -1,0 +1,49 @@
+[2026-06-30 14:07:34] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | hfbrasil-preco v0.1.0 — Pipeline ETL
+[2026-06-30 14:07:34] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Run ID: 9f548e2f-f7c9-4ff7-a5cb-0401877510d9
+[2026-06-30 14:07:34] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Produtos: ['ALFACE']
+[2026-06-30 14:07:34] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Ano: 2026 | Regiao: Todos | Periodicidade: Anual
+[2026-06-30 14:07:34] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Dry-run: False | Headless: True
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ==================================================
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ETAPA 1/5 — Verificacoes pre-voo
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ==================================================
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Iniciando verificacoes pre-voo
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Verificando site: https://www.hfbrasil.org.br/br/banco-de-dados-precos-medios-dos-hortifruticolas.aspx
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 |   Site OK (HTTP 200)
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 |   Diretorio xlsx: dados\xlsx (OK)
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 |   Diretorio csv: dados\csv (OK)
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 |   Diretorio logs: dados\logs (OK)
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Todas as verificacoes pre-voo passaram
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ==================================================
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ETAPA 2/5 — Extracao (Selenium)
+[2026-06-30 14:07:35] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | ==================================================
+[2026-06-30 14:07:37] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Extraindo: ALFACE (radio value=12)
+[2026-06-30 14:08:07] WARNING  hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Tentativa 1/3 falhou para ALFACE: Timeout ao preencher form para ALFACE: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff72ca93fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff72ca94000+14980]
+	chromedriver!(No symbol) [0x7ff72c5d793d]
+	chromedriver!(No symbol) [0x7ff72c631aad]
+	chromedriver!(No symbol) [0x7ff72c631dac]
+	chromedriver!(No symbol) [0x7ff72c6827d7]
+	chromedriver!(No symbol) [0x7ff72c67f39b]
+	chromedriver!(No symbol) [0x7ff72c62401c]
+	chromedriver!(No symbol) [0x7ff72c624f43]
+	chromedriver!GetHandleVerifier [0x7ff72d077591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff72d071902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff72d097115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff72cab1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff72caba82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff72ca9d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff72ca9d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff72ca81447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffc35dce957+17]
+	ntdll!RtlUserThreadStart [0x7ffc373c7c1c+2c]
+
+[2026-06-30 14:08:12] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Extraindo: ALFACE (radio value=12)
+[2026-06-30 14:09:18] WARNING  hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Tentativa 2/3 falhou para ALFACE: Timeout de 60s aguardando XLS para produto 'ALFACE' em C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx
+[2026-06-30 14:09:23] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Extraindo: ALFACE (radio value=12)
+[2026-06-30 14:10:28] WARNING  hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Tentativa 3/3 falhou para ALFACE: Timeout de 60s aguardando XLS para produto 'ALFACE' em C:\Users\JFC\Desktop\HF_AUTOMAÇAO\0031-hfbrasil-preco-agro\dados\xlsx
+[2026-06-30 14:10:28] ERROR    hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Produto ALFACE esgotou tentativas — pulando
+[2026-06-30 14:10:30] WARNING  hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Nenhum XLS baixado — pipeline encerrada
+[2026-06-30 14:10:30] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Notificacao suprimida (notificar_sucesso=False, todas etapas OK)
+[2026-06-30 14:10:30] INFO     hfbrasil.9f548e2f-f7c9-4ff7-a5cb-0401877510d9 | Pipeline finalizada — etapas OK: 2, falhas: 0, duracao: 175.4s

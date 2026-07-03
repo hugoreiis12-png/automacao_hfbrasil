@@ -1,0 +1,9 @@
+# hfbrasil-preco — pipeline ETL semanal
+# Executa toda segunda-feira as 07:00 (fuso do container: America/Sao_Paulo).
+#
+# Campos: minuto hora dia-do-mes mes dia-da-semana (1 = segunda)
+#
+# O job carrega o ambiente do container (. /app/container_env.sh) porque o cron
+# NAO herda as variaveis do processo do container — sem isso, PG_HOST/PG_USER e
+# afins nao chegariam ao pipeline. O entrypoint gera esse arquivo no start.
+0 7 * * 1 . /app/container_env.sh; cd /app && hfbrasil-preco >> /app/dados/logs/cron.log 2>&1
