@@ -2,6 +2,11 @@ services:
   hfbrasil-preco:
     build: .
     image: hfbrasil-preco:latest
+    # A imagem e construida localmente (build acima), nunca baixada de um
+    # registro. 'build' faz o Compose SEMPRE construir no deploy e NAO tentar
+    # dar pull — sem isso o "Pull and redeploy" do Portainer falha com
+    # "pull access denied for hfbrasil-preco" (a imagem nao existe em registro).
+    pull_policy: build
     container_name: hfbrasil-preco
     environment:
       # ── Fuso (o agendamento de segunda 07:00 segue este TZ) ──
