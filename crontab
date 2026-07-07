@@ -6,4 +6,9 @@
 # O job carrega o ambiente do container (. /app/container_env.sh) porque o cron
 # NAO herda as variaveis do processo do container — sem isso, PG_HOST/PG_USER e
 # afins nao chegariam ao pipeline. O entrypoint gera esse arquivo no start.
+#
+# PATH: o cron roda com PATH minimo (/usr/bin:/bin) e NAO inclui /usr/local/bin,
+# onde o pip instala o console script hfbrasil-preco. Sem esta linha o job falha
+# com "hfbrasil-preco: not found". Declaramos o PATH explicitamente aqui.
+PATH=/usr/local/bin:/usr/bin:/bin
 0 7 * * 1 . /app/container_env.sh; cd /app && hfbrasil-preco >> /app/dados/logs/cron.log 2>&1
