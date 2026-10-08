@@ -10,7 +10,6 @@ from contextlib import contextmanager
 from typing import Iterator
 
 import psycopg2
-from psycopg2 import sql
 from psycopg2.extras import RealDictCursor
 
 from hfbrasil_preco.config import DBConfig
@@ -90,15 +89,6 @@ class Database:
         if self.conectado:
             assert self._conn is not None
             self._conn.rollback()
-
-    # ── atalhos para COPY / INSERT em lote ──
-
-    def executar_many(
-        self, query: sql.Composable, params: list[tuple[object, ...]]
-    ) -> None:
-        """Executa um prepared statement para cada tupla em params."""
-        with self.cursor() as cur:
-            cur.executemany(query, params)
 
     def __enter__(self) -> Database:
         self.connect()

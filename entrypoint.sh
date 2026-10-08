@@ -13,7 +13,7 @@ fi
 # O cron nao herda o ambiente do container. Exportamos as variaveis relevantes
 # para um arquivo que o job carrega (. /app/container_env.sh) antes de rodar o
 # pipeline. Valores em aspas simples para tolerar espacos/&/? (ex: SITE_URL).
-printenv | grep -E '^(PG_[A-Z0-9_]*|BASE_DIR|SITE_URL|PERIODICIDADE|HEADLESS|CANAL|CHROME_BINARY|CHROMEDRIVER_PATH|TZ|RUN_ON_START)=' \
+printenv | grep -E '^(PG_[A-Z0-9_]*|BASE_DIR|SITE_URL|ANO|PERIODICIDADE|HEADLESS|CANAL|CHROME_BINARY|CHROMEDRIVER_PATH|TZ|RUN_ON_START)=' \
     | while IFS='=' read -r chave valor; do
         printf "export %s='%s'\n" "$chave" "$valor"
     done > /app/container_env.sh

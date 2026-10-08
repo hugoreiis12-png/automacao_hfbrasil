@@ -93,7 +93,7 @@ def _criar_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--periodicidade", type=str, default=None,
         choices=["diario", "mensal", "anual", "Diario", "Mensal", "Anual"],
-        help="Periodicidade (default: Anual)",
+        help="Periodicidade (default: Diario)",
     )
     parser.add_argument(
         "--headless", action="store_true", dest="headless", default=None,

@@ -22,6 +22,7 @@ services:
       - PG_PASSWORD=${PG_PASSWORD:?defina a variavel PG_PASSWORD na stack do Portainer}
       # ── Pipeline ──
       - BASE_DIR=/app/dados
+      - ANO=2026
       - PERIODICIDADE=Diario
       - HEADLESS=true
       - CANAL=console
